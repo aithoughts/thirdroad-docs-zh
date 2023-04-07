@@ -1,0 +1,136 @@
+{
+  "$schema": "https://turborepo.org/schema.json",
+  "pipeline": {
+    "build": {
+      "outputs": ["dist/**"],
+      "dependsOn": ["^build"]
+    },
+    "@thirdweb-dev/chains#build": {
+      "outputs": ["dist/**", "chains/**"],
+      "dependsOn": ["^build"],
+      "inputs": [
+        "package.json",
+        "scripts/**",
+        "data/**",
+        "src/types.ts",
+        "src/utils.ts"
+      ]
+    },
+    "@thirdweb-dev/wallets#build": {
+      "outputs": ["dist/**", "evm/**", "solana/**"],
+      "dependsOn": ["^build"]
+    },
+    "@thirdweb-dev/pay#build": {
+      "outputs": ["dist/**", "integrations/**"],
+      "dependsOn": ["^build"]
+    },
+    "@thirdweb-dev/sdk#build": {
+      "outputs": ["dist/**", "evm/**", "solana/**"],
+      "dependsOn": ["^build"]
+    },
+    "@thirdweb-dev/react#build": {
+      "outputs": ["dist/**", "evm/**", "solana/**"],
+      "dependsOn": ["^build"]
+    },
+    "@thirdweb-dev/react-core#build": {
+      "outputs": ["dist/**", "evm/**", "solana/**"],
+      "dependsOn": ["^build"]
+    },
+    "@thirdweb-dev/react-native#build": {
+      "outputs": ["dist/**"],
+      "dependsOn": ["^build"]
+    },
+    "@thirdweb-dev/react-native-compat#build": {
+      "outputs": ["src/**"],
+      "dependsOn": ["^build"]
+    },
+    "@thirdweb-dev/auth#build": {
+      "outputs": [
+        "dist/**",
+        "evm/**",
+        "solana/**",
+        "express/**",
+        "next/**",
+        "next-auth/**"
+      ],
+      "dependsOn": ["^build"]
+    },
+    "@thirdweb-dev/contracts-js#build": {
+      "outputs": ["dist/**", "factories/**", "src/**"],
+      "inputs": ["package.json"],
+      "dependsOn": ["^build"]
+    },
+    "test": {
+      "outputs": [],
+      "inputs": ["src/**", "test/**"],
+      "dependsOn": ["build"]
+    },
+    "test:solana": {
+      "outputs": ["coverage/solana/**"],
+      "inputs": ["src/core/**", "src/solana/**", "test/solana/**"],
+      "dependsOn": ["build"]
+    },
+    "test:evm": {
+      "outputs": ["coverage/evm/**"],
+      "inputs": ["src/core/**", "src/evm/**", "test/evm/**"],
+      "dependsOn": ["build"]
+    },
+    "e2e": {
+      "outputs": [],
+      "inputs": ["src/**"],
+      "dependsOn": ["build"]
+    },
+    "e2e-cra-5#build": {
+      "outputs": ["build/**"],
+      "inputs": ["src/**", "fixtures/**"],
+      "dependsOn": ["^build"]
+    },
+    "e2e-next-12#build": {
+      "outputs": [".next/**"],
+      "inputs": ["src/**", "fixtures/**"],
+      "dependsOn": ["^build"]
+    },
+    "e2e-vite-3#build": {
+      "outputs": ["dist/**"],
+      "inputs": ["src/**", "fixtures/**"],
+      "dependsOn": ["^build"]
+    },
+    "e2e-cra-5#e2e": {
+      "outputs": ["playwright-report/**"],
+      "inputs": ["src/**", "fixtures/**"],
+      "dependsOn": ["build"]
+    },
+    "e2e-next-12#e2e": {
+      "outputs": ["playwright-report/**"],
+      "inputs": ["src/**", "fixtures/**"],
+      "dependsOn": ["build"]
+    },
+    "e2e-vite-3#e2e": {
+      "outputs": ["playwright-report/**"],
+      "inputs": ["src/**", "fixtures/**"],
+      "dependsOn": ["build"]
+    },
+    "thirdweb#e2e": {
+      "outputs": [],
+      "inputs": ["src/**", "e2e/**"],
+      "dependsOn": ["build"]
+    },
+    "lint": {
+      "outputs": []
+    },
+    "fix": {
+      "outputs": []
+    },
+    "dev": {
+      "cache": false
+    },
+    "clean": {
+      "cache": false
+    },
+    "push": {
+      "cache": false,
+      "dependsOn": ["build"]
+    }
+  },
+  "globalEnv": ["CI"]
+}

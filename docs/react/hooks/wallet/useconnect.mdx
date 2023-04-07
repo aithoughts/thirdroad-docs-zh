@@ -1,0 +1,79 @@
+---
+title: useConnect
+slug: /react.useconnect
+displayed_sidebar: react
+---
+
+Hook for connecting any supported [wallet](/wallet) to your app.
+
+```jsx
+import { useConnect } from "@thirdweb-dev/react";
+
+const connect = useConnect();
+```
+
+## Usage
+
+```jsx
+import { useConnect, metamaskWallet } from "@thirdweb-dev/react";
+
+const metamask = metamaskWallet();
+
+function App() {
+  const connect = useConnect();
+
+  return <button onClick={() => connect(metamask)}>Connect to MetaMask</button>;
+}
+```
+
+## Configuration
+
+<details>
+  <summary>wallet (required)</summary>
+  <div>
+
+The wallet to connect to your app with.
+
+Must be of type `AbstractBrowserWallet`.
+
+[Learn more about the available wallet options](/react/connecting-wallets).
+
+</div>
+</details>
+
+<details>
+  <summary>chainId (optional)</summary>
+  <div>
+
+To connect to a specific chain when connecting the wallet,
+pass the `chainId` in a configuration object as shown below.
+
+This will prompt the user to switch to the given network after they connect.
+
+```jsx
+import { useConnect, metamaskWallet } from "@thirdweb-dev/react";
+
+const metamask = metamaskWallet();
+
+function App() {
+  const connect = useConnect();
+
+  return (
+    <button
+      onClick={() =>
+        connect(
+          metamask,
+          // highlight-start
+          { chainId: 1 },
+          // highlight-end
+        )
+      }
+    >
+      Connect to MetaMask
+    </button>
+  );
+}
+```
+
+</div>
+</details>

@@ -1,0 +1,14 @@
+[submodule "submodules/contracts"]
+	path = submodules/contracts
+	url = https://github.com/thirdweb-dev/contracts
+	branch = main
+[submodule "submodules/python"]
+	path = submodules/python
+	url = https://github.com/thirdweb-dev/python-sdk.git
+	branch = main
+[submodule "submodules/go"]
+	path = submodules/go
+	url = https://github.com/thirdweb-dev/go-sdk.git
+[submodule "submodules/js"]
+	path = submodules/js
+	url = https://github.com/thirdweb-dev/js.git

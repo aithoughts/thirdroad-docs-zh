@@ -1,139 +1,301 @@
 // @ts-check
 // Note: type annotations allow type checking and IDEs autocompletion
 
-const lightCodeTheme = require('prism-react-renderer/themes/github');
-const darkCodeTheme = require('prism-react-renderer/themes/dracula');
+const lightCodeTheme = require("prism-react-renderer/themes/vsLight");
+const darkCodeTheme = require("prism-react-renderer/themes/oceanicNext");
+
+const npm2yarn = require("@docusaurus/remark-plugin-npm2yarn");
+const disableCachePlugin = require("./plugins/disable-cache-plugin");
+const path = require("path");
+
+const baseUrl = process.env.BASE_URL || "/";
+
+//@ts-check
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'My Site',
-  tagline: 'Dinosaurs are cool',
-  favicon: 'img/favicon.ico',
-
-  // Set the production url of your site here
-  url: 'https://your-docusaurus-test-site.com',
-  // Set the /<baseUrl>/ pathname under which your site is served
-  // For GitHub pages deployment, it is often '/<projectName>/'
-  baseUrl: '/',
-
-  // GitHub pages deployment config.
-  // If you aren't using GitHub pages, you don't need these.
-  organizationName: 'facebook', // Usually your GitHub org/user name.
-  projectName: 'docusaurus', // Usually your repo name.
-
-  onBrokenLinks: 'throw',
-  onBrokenMarkdownLinks: 'warn',
-
-  // Even if you don't use internalization, you can use this field to set useful
-  // metadata like html lang. For example, if your site is Chinese, you may want
-  // to replace "en" with "zh-Hans".
-  i18n: {
-    defaultLocale: 'en',
-    locales: ['en'],
+  title: "thirdweb developer portal",
+  tagline: "Get started with thirdweb by diving into our developer portal.",
+  url: "https://portal.thirdweb.com",
+  baseUrl,
+  onBrokenLinks: "throw",
+  onBrokenMarkdownLinks: "warn",
+  favicon: "img/favicon.ico",
+  organizationName: "thidweb-dev", // Usually your GitHub org/user name.
+  projectName: "docs", // Usually your repo name.
+  trailingSlash: false,
+  webpack: {
+    jsLoader: (isServer) => ({
+      loader: require.resolve("swc-loader"),
+      options: {
+        jsc: {
+          parser: {
+            syntax: "typescript",
+            tsx: true,
+          },
+          target: "es2017",
+        },
+        module: {
+          type: isServer ? "commonjs" : "es6",
+        },
+      },
+    }),
   },
-
+  baseUrlIssueBanner: true,
   presets: [
     [
-      'classic',
+      "classic",
       /** @type {import('@docusaurus/preset-classic').Options} */
       ({
         docs: {
-          sidebarPath: require.resolve('./sidebars.js'),
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
-          editUrl:
-            'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
+          sidebarPath: require.resolve("./sidebars/onboarding.js"),
+          id: "onboarding",
+          path: "docs/onboarding",
+          routeBasePath: "/",
+          remarkPlugins: [[npm2yarn, { sync: true }]],
+          sidebarCollapsed: false,
+          editUrl: "https://github.com/thirdweb-dev/docs/edit/main",
         },
-        blog: {
-          showReadingTime: true,
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
-          editUrl:
-            'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
+        sitemap: {
+          changefreq: "daily",
         },
         theme: {
-          customCss: require.resolve('./src/css/custom.css'),
+          customCss: [require.resolve("./src/scss/custom.scss")],
         },
       }),
+    ],
+  ],
+  plugins: [
+    disableCachePlugin,
+    "docusaurus-node-polyfills",
+    [
+      "ideal-image",
+      /** @type {import('@docusaurus/plugin-ideal-image').PluginOptions} */
+      ({
+        quality: 70,
+        max: 1030,
+        min: 640,
+        steps: 2,
+        // Use false to debug, but it incurs huge perf costs
+        disableInDev: true,
+      }),
+    ],
+    [
+      "@docusaurus/plugin-content-docs",
+      {
+        id: "typescript",
+        path: "docs/typescript",
+        routeBasePath: "typescript",
+        sidebarPath: require.resolve("./sidebars/typescript.js"),
+        remarkPlugins: [[npm2yarn, { sync: true }]],
+        editUrl: "https://github.com/thirdweb-dev/docs/edit/main",
+      },
+    ],
+    [
+      "@docusaurus/plugin-content-docs",
+      {
+        id: "react",
+        path: "docs/react",
+        routeBasePath: "react",
+        sidebarPath: require.resolve("./sidebars/react.js"),
+        remarkPlugins: [[npm2yarn, { sync: true }]],
+        editUrl: "https://github.com/thirdweb-dev/docs/edit/main",
+        // ... other options
+      },
+    ],
+    [
+      "@docusaurus/plugin-content-docs",
+      {
+        id: "react-native",
+        path: "docs/react-native",
+        routeBasePath: "react-native",
+        sidebarPath: require.resolve("./sidebars/react-native.js"),
+        remarkPlugins: [[npm2yarn, { sync: true }]],
+        editUrl: "https://github.com/thirdweb-dev/docs/edit/main",
+        // ... other options
+      },
+    ],
+    [
+      "@docusaurus/plugin-content-docs",
+      {
+        id: "solana",
+        path: "docs/solana",
+        routeBasePath: "solana-sdk",
+        sidebarPath: require.resolve("./sidebars/solana.js"),
+        remarkPlugins: [[npm2yarn, { sync: true }]],
+        editUrl: "https://github.com/thirdweb-dev/docs/edit/main",
+        // ... other options
+      },
+    ],
+    [
+      "@docusaurus/plugin-content-docs",
+      {
+        id: "contracts",
+        path: "docs/contracts",
+        routeBasePath: "contracts",
+        sidebarPath: require.resolve("./sidebars/contracts.js"),
+        remarkPlugins: [[npm2yarn, { sync: true }]],
+        editUrl: "https://github.com/thirdweb-dev/docs/edit/main",
+        // ... other options
+      },
+    ],
+    [
+      "@docusaurus/plugin-content-docs",
+      {
+        id: "python",
+        path: "docs/python",
+        routeBasePath: "python",
+        sidebarPath: require.resolve("./sidebars/python.js"),
+        remarkPlugins: [[npm2yarn, { sync: true }]],
+        editUrl: "https://github.com/thirdweb-dev/docs/edit/main",
+        // ... other options
+      },
+    ],
+    [
+      "@docusaurus/plugin-content-docs",
+      {
+        id: "go",
+        path: "docs/go",
+        routeBasePath: "go",
+        sidebarPath: require.resolve("./sidebars/go.js"),
+        remarkPlugins: [[npm2yarn, { sync: true }]],
+        editUrl: "https://github.com/thirdweb-dev/docs/edit/main",
+        // ... other options
+      },
+    ],
+    [
+      "@docusaurus/plugin-content-docs",
+      {
+        id: "unity",
+        path: "docs/unity",
+        routeBasePath: "unity",
+        sidebarPath: require.resolve("./sidebars/unity.js"),
+        remarkPlugins: [[npm2yarn, { sync: true }]],
+        editUrl: "https://github.com/thirdweb-dev/docs/edit/main",
+        // ... other options
+      },
+    ],
+    "posthog-docusaurus",
+    "docusaurus-plugin-sass",
+    [
+      "docusaurus-plugin-module-alias",
+      {
+        alias: {
+          "@components": path.resolve(__dirname, "./src/components/"),
+        },
+      },
     ],
   ],
 
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
-      // Replace with your project's social card
-      image: 'img/docusaurus-social-card.jpg',
+      image: "img/portal.png",
+      algolia: {
+        appId: "IAIE3FU2AD",
+        apiKey: "1d9ebc991c049c913bedcf3d50916922",
+        indexName: "thirdweb",
+        contextualSearch: true,
+      },
+      posthog: {
+        apiKey: "phc_hKK4bo8cHZrKuAVXfXGpfNSLSJuucUnguAgt2j6dgSV",
+        appUrl: "https://a.thirdweb.com", // optional
+        enableInDevelopment: true, // optional
+      },
+      colorMode: {
+        respectPrefersColorScheme: true,
+        defaultMode: "dark",
+        // This removes light mode
+        disableSwitch: false,
+      },
       navbar: {
-        title: 'My Site',
         logo: {
-          alt: 'My Site Logo',
-          src: 'img/logo.svg',
+          alt: "thirdweb docs",
+          src: "img/thirdweb-logo-transparent-black.svg",
+          href: "/",
+          srcDark: "img/thirdweb-logo-transparent-white.svg",
         },
-        items: [
-          {
-            type: 'docSidebar',
-            sidebarId: 'tutorialSidebar',
-            position: 'left',
-            label: 'Tutorial',
-          },
-          {to: '/blog', label: 'Blog', position: 'left'},
-          {
-            href: 'https://github.com/facebook/docusaurus',
-            label: 'GitHub',
-            position: 'right',
-          },
-        ],
       },
       footer: {
-        style: 'dark',
+        style: "light",
         links: [
           {
-            title: 'Docs',
+            title: "Docs",
             items: [
               {
-                label: 'Tutorial',
-                to: '/docs/intro',
+                label: "JavaScript / TypeScript",
+                to: "/typescript",
+              },
+              {
+                label: "React",
+                to: "/react",
+              },
+              {
+                label: "Storage",
+                to: "/storage",
+              },
+              {
+                label: "Contracts",
+                to: "/contracts",
+              },
+              {
+                label: "Go",
+                to: "/go",
               },
             ],
           },
           {
-            title: 'Community',
+            title: "Community",
             items: [
               {
-                label: 'Stack Overflow',
-                href: 'https://stackoverflow.com/questions/tagged/docusaurus',
+                label: "Discord",
+                href: "https://discord.gg/thirdweb",
               },
               {
-                label: 'Discord',
-                href: 'https://discordapp.com/invite/docusaurus',
+                label: "Twitter",
+                href: "https://twitter.com/thirdweb",
               },
               {
-                label: 'Twitter',
-                href: 'https://twitter.com/docusaurus',
+                label: "GitHub",
+                href: "https://github.com/thirdweb-dev",
               },
             ],
           },
           {
-            title: 'More',
+            title: "More",
             items: [
               {
-                label: 'Blog',
-                to: '/blog',
+                label: "Dashboard",
+                href: "https://thirdweb.com/dashboard",
               },
               {
-                label: 'GitHub',
-                href: 'https://github.com/facebook/docusaurus',
+                label: "Blog",
+                href: "https://blog.thirdweb.com",
+              },
+              {
+                label: "Guides",
+                href: "/guides",
               },
             ],
           },
         ],
-        copyright: `Copyright © ${new Date().getFullYear()} My Project, Inc. Built with Docusaurus.`,
+        copyright: `Copyright © ${new Date().getFullYear()} thirdweb, Inc.`,
       },
       prism: {
+        additionalLanguages: ["solidity", "csharp"],
         theme: lightCodeTheme,
         darkTheme: darkCodeTheme,
       },
     }),
+
+  scripts: [
+    {
+      src: "https://thirdweb.com/js/pl.js",
+      defer: true,
+      "data-domain": "portal.thirdweb.com",
+      "data-api": "https://pl.thirdweb.com/api/event",
+    },
+  ],
 };
 
 module.exports = config;

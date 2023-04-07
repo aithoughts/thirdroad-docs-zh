@@ -1,0 +1,27 @@
+name: Generate Docs
+
+on:
+  repository_dispatch:
+    types: [generate-docs]
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: pnpm/action-setup@v2
+        with:
+          version: 6.0.2
+      - uses: actions/checkout@v2
+        with:
+          token: ${{ secrets.REPO_ACCESS_TOKEN }}
+          submodules: recursive
+      - name: Run update.sh
+        run: ./update.sh
+      - name: Commit changes
+        run: |
+          git config --global user.email "joaquim.verges@gmail.com"
+          git config --global user.name "thirdweb Git Bot"
+          git status
+          git add .
+          git commit -m "Update docs"
+          git push origin main
