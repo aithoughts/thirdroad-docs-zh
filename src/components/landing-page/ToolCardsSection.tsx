@@ -13,56 +13,56 @@ const products: Product[] = [
     image: "/assets/product/extensions.png",
     name: "Solidity SDK",
     description:
-      "Base contracts that can be configured with extensions to meet your specific use case",
+      "基础合约，可以配置扩展以满足你的特定用例",
     link: "/solidity",
   },
   {
     image: "/assets/product/contracts.png",
-    name: "Explore",
+    name: "探索",
     description:
-      "Discover and deploy contracts from world-class protocols & developers in 1-click",
+      "一键发现和部署来自世界级协议和开发人员的合约",
     link: "/pre-built-contracts",
   },
   {
     image: "/assets/product/sdk.png",
     name: "SDK",
     description:
-      "Powerful SDKs for every stack. Support for Javascript, React, Python, Go, Node.js, Unity",
+      "每个技术栈都有强大的SDK，支持Javascript, React, Python, Go, Node.js, Unity",
     link: "/sdk",
   },
   {
     image: "/assets/product/ui.png",
-    name: "UI Components",
+    name: "UI组件",
     description:
-      "Plug and play UI components to easily add web3 functionality to your apps",
+      "即插即用的UI组件可以轻松地将web3功能添加到应用程序中",
     link: "/ui-components",
   },
   {
     image: "/assets/product/deploy.png",
-    name: "Deploy",
+    name: "部署",
     description:
-      "Deploy contracts on-chain with a simple deployment workflow designed for team collaboration",
+      "通过为团队协作设计的简单部署工作流，在链上部署合同",
     link: "/deploy",
   },
   {
     image: "/assets/product/publish.png",
-    name: "Publish",
+    name: "发布",
     description:
-      "Publish your contracts to be discovered by our community of 70k+ web3 developers",
+      "发布你的合同，让我们70k+的web3开发者社区发现你的合同",
     link: "/publish",
   },
   {
     image: "/assets/product/dashboard.png",
-    name: "Dashboard",
+    name: "看板",
     description:
-      "Manage, analyze, and interact with all your deployed contracts conveniently from a single place",
+      "一站式方便地交互、管理、分析所有部署的合约",
     link: "/dashboard",
   },
   {
     image: "/assets/product/CLI.png",
     name: "CLI",
     description:
-      "A suite of commands that let you interface with thirdweb tools through your terminal",
+      "一套命令，允许你通过终端与thirdweb工具进行交互",
     link: "/cli",
   },
 ];
@@ -71,7 +71,7 @@ export default function ExploreProductsSection() {
   return (
     <div className="explore-products-container">
       <h2 className="explore-products-heading" style={{ marginBottom: 12 }}>
-        Tools
+        工具
       </h2>
       <div className="row" style={{ marginBottom: 64 }}>
         {products.map((p, i) => (
