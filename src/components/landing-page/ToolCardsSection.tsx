@@ -35,7 +35,7 @@ const products: Product[] = [
     name: "UI组件",
     description:
       "即插即用的UI组件可以轻松地将web3功能添加到应用程序中",
-    link: "/ui-components",
+    link: "/react/react.web3button",
   },
   {
     image: "/assets/product/deploy.png",
