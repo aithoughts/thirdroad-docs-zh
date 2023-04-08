@@ -1,6 +1,0 @@
-{
-  "devDependencies": {
-    "@thirdweb-dev/contracts-js": "^1.3.1",
-    "hardhat": "^2.13.0"
-  }
-}
