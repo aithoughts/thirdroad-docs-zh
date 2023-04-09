@@ -1,4 +1,5 @@
 import React from "react";
+
 import GettingStartedCard from "../GettingStartedCard";
 
 type Resource = {
@@ -10,41 +11,41 @@ type Resource = {
 
 const resources: Resource[] = [
   {
-    name: "Guides",
+    name: "指南",
     description:
-      "Learn more about how you can use thirdweb to build your web3 app",
+      "了解更多，指导关于如何使用thirdweb来构建您的web3应用程序",
     link: "https://blog.thirdweb.com/guides/",
     image: "/assets/resources/guides.svg",
   },
   {
-    name: "Templates",
+    name: "模板",
     description:
-      "Kickstart your project using one of our templates with a 1-line command",
+      "使用我们的模板，用一行命令启动你的项目",
     link: "/templates",
     image: "/assets/resources/sdk-reference.svg",
   },
   {
-    name: "YouTube",
+    name: "油管",
     description:
-      "Learn web3 development by building working apps with video tutorials",
+      "通过视频教程构建工作应用程序来学习web3开发",
     link: "https://www.youtube.com/thirdweb",
     image: "/assets/resources/youtube.svg",
   },
   {
-    name: "Events",
-    description: "Attend live workshops and office hours to get hands-on with code",
+    name: "活动",
+    description: "参加现场研讨会和办公时间，亲身体验代码",
     link: 'https://thirdweb.com/events',
     image: "/assets/resources/calendar.svg",
   },
   {
-    name: "Discord",
-    description: "Join our community of developers building the future of web3",
+    name: "社区",
+    description: "加入我们的开发者社区，构建web3的未来",
     link: 'https://discord.gg/thirdweb',
     image: "/assets/resources/discord.svg",
   },
   {
-    name: "Support",
-    description: "Troubleshooting articles and live support from customer support team",
+    name: "支持",
+    description: "故障排除类文章，来自客户支持团队的实时支持",
     link: 'https://support.thirdweb.com',
     image: "/assets/resources/support.svg",
   }
@@ -54,7 +55,7 @@ export default function ResourceCards() {
   return (
     <div className="explore-products-container">
       <h2 className="explore-products-heading" style={{ marginBottom: 12 }}>
-        Additional Resources
+        更多资源
       </h2>
       <div className="row" style={{ marginBottom: 64 }}>
         {resources.map((p, i) => (

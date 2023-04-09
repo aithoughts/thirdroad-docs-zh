@@ -1,4 +1,5 @@
 import React from "react";
+
 import ProductCard from "./ProductCard";
 
 type Product = {
@@ -71,7 +72,7 @@ export default function ExploreProductsSection() {
   return (
     <div className="explore-products-container">
       <h2 className="explore-products-heading" style={{ marginBottom: 12 }}>
-        工具
+        全栈工具
       </h2>
       <div className="row" style={{ marginBottom: 64 }}>
         {products.map((p, i) => (
