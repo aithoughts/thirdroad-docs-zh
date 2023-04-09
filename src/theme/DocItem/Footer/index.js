@@ -69,7 +69,7 @@ export default function DocItemFooter() {
       {canDisplayEditMetaRow &&
         editUrl !==
           // TODO: this is bad - Hard code don't show the footer on the homepage
-          "https://github.com/thirdweb-dev/docs/edit/main/docs/onboarding/0 0 Home.mdx" && (
+          "https://github.com/aithoughts/thirdroad-docs-zh/edit/main/docs/onboarding/0 0 Home.mdx" && (
           <EditMetaRow
             editUrl={editUrl}
             lastUpdatedAt={lastUpdatedAt}

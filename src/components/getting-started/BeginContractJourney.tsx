@@ -3,23 +3,23 @@ import React, { useEffect, useState } from "react";
 const items = [
   {
     id: "prebuilt-contract-section",
-    title: "Explore",
+    title: "探索合约",
     description:
-      "Secure, gas-optimized, and audited contracts that are ready to be deployed with one-click.",
+      "可以一键部署安全、gas费优化、经过审计的合约。",
     icon: "/product/contracts.png",
   },
   {
     id: "custom-contract-section",
-    title: "Build your own",
+    title: "构建合约",
     description:
-      "Create custom contracts that are specific to your use case using the Solidity SDK.",
+      "使用Solidity SDK创建特定于你的用例的自定义合约。",
     icon: "/product/extensions.png",
   },
   {
     id: "deploy-contract-section",
-    title: "Deploy from source",
+    title: "源码部署",
     description:
-      "Already have a contract ready to deploy? Learn how to use our interactive CLI to ship it.",
+      "已经有准备部署的合约了吗? 学习如何使用我们的交互式CLI来发布它。",
     icon: "/product/deploy.png",
   },
 ];

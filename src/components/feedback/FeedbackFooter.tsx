@@ -40,7 +40,7 @@ export default function FeedbackFooter() {
   if (submissionState === "pending") {
     return (
       <div className="feedback card">
-        <p className="feedback-title">Was this page helpful?</p>
+        <p className="feedback-title">这个页面对你有帮助吗?</p>
         <div
           style={{
             display: "flex",
@@ -55,13 +55,13 @@ export default function FeedbackFooter() {
               marginRight: 8,
             }}
           >
-            👍 Yes
+            👍 有
           </button>
           <button
             className="feedback-button"
             onClick={() => handleSubmit(false)}
           >
-            👎 No
+            👎 没
           </button>
         </div>
       </div>
@@ -73,7 +73,7 @@ export default function FeedbackFooter() {
     return (
       <div className="feedback card" style={{ justifyContent: "center" }}>
         <p className="feedback-title" style={{ width: "auto" }}>
-          Thanks for your feedback 🙏
+        谢谢您的反馈 🙏
         </p>
       </div>
     );
@@ -89,9 +89,9 @@ export default function FeedbackFooter() {
           justifyContent: "flex-start",
         }}
       >
-        <p className="feedback-form-title">Sorry about that 😔</p>
+        <p className="feedback-form-title">很抱歉 😔</p>
         <p className="feedback-form-title">
-          Please describe the issue you faced so that we can improve the page.
+        请描述您遇到的问题，以便我们改进页面。
         </p>
         <textarea
           className="feedback-form-input"
@@ -112,7 +112,7 @@ export default function FeedbackFooter() {
             handleSubmitText(feedback);
           }}
         >
-          Send feedback
+          发送反馈
         </button>
       </div>
     );

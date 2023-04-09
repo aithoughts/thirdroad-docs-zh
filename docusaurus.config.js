@@ -54,7 +54,7 @@ const config = {
           routeBasePath: "/",
           remarkPlugins: [[npm2yarn, { sync: true }]],
           sidebarCollapsed: false,
-          editUrl: "https://github.com/thirdweb-dev/docs/edit/main",
+          editUrl: "https://github.com/aithoughts/thirdroad-docs-zh/edit/main",
         },
         sitemap: {
           changefreq: "daily",
@@ -88,7 +88,7 @@ const config = {
         routeBasePath: "typescript",
         sidebarPath: require.resolve("./sidebars/typescript.js"),
         remarkPlugins: [[npm2yarn, { sync: true }]],
-        editUrl: "https://github.com/thirdweb-dev/docs/edit/main",
+        editUrl: "https://github.com/aithoughts/thirdroad-docs-zh/edit/main",
       },
     ],
     [
@@ -99,7 +99,7 @@ const config = {
         routeBasePath: "react",
         sidebarPath: require.resolve("./sidebars/react.js"),
         remarkPlugins: [[npm2yarn, { sync: true }]],
-        editUrl: "https://github.com/thirdweb-dev/docs/edit/main",
+        editUrl: "https://github.com/aithoughts/thirdroad-docs-zh/edit/main",
         // ... other options
       },
     ],
@@ -111,7 +111,7 @@ const config = {
         routeBasePath: "react-native",
         sidebarPath: require.resolve("./sidebars/react-native.js"),
         remarkPlugins: [[npm2yarn, { sync: true }]],
-        editUrl: "https://github.com/thirdweb-dev/docs/edit/main",
+        editUrl: "https://github.com/aithoughts/thirdroad-docs-zh/edit/main",
         // ... other options
       },
     ],
@@ -123,7 +123,7 @@ const config = {
         routeBasePath: "solana-sdk",
         sidebarPath: require.resolve("./sidebars/solana.js"),
         remarkPlugins: [[npm2yarn, { sync: true }]],
-        editUrl: "https://github.com/thirdweb-dev/docs/edit/main",
+        editUrl: "https://github.com/aithoughts/thirdroad-docs-zh/edit/main",
         // ... other options
       },
     ],
@@ -135,7 +135,7 @@ const config = {
         routeBasePath: "contracts",
         sidebarPath: require.resolve("./sidebars/contracts.js"),
         remarkPlugins: [[npm2yarn, { sync: true }]],
-        editUrl: "https://github.com/thirdweb-dev/docs/edit/main",
+        editUrl: "https://github.com/aithoughts/thirdroad-docs-zh/edit/main",
         // ... other options
       },
     ],
@@ -147,7 +147,7 @@ const config = {
         routeBasePath: "python",
         sidebarPath: require.resolve("./sidebars/python.js"),
         remarkPlugins: [[npm2yarn, { sync: true }]],
-        editUrl: "https://github.com/thirdweb-dev/docs/edit/main",
+        editUrl: "https://github.com/aithoughts/thirdroad-docs-zh/edit/main",
         // ... other options
       },
     ],
@@ -159,7 +159,7 @@ const config = {
         routeBasePath: "go",
         sidebarPath: require.resolve("./sidebars/go.js"),
         remarkPlugins: [[npm2yarn, { sync: true }]],
-        editUrl: "https://github.com/thirdweb-dev/docs/edit/main",
+        editUrl: "https://github.com/aithoughts/thirdroad-docs-zh/edit/main",
         // ... other options
       },
     ],
@@ -171,7 +171,7 @@ const config = {
         routeBasePath: "unity",
         sidebarPath: require.resolve("./sidebars/unity.js"),
         remarkPlugins: [[npm2yarn, { sync: true }]],
-        editUrl: "https://github.com/thirdweb-dev/docs/edit/main",
+        editUrl: "https://github.com/aithoughts/thirdroad-docs-zh/edit/main",
         // ... other options
       },
     ],
