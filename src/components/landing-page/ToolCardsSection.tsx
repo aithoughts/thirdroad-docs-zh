@@ -54,7 +54,7 @@ const products: Product[] = [
   },
   {
     image: "/assets/product/dashboard.png",
-    name: "看板",
+    name: "仪表板",
     description:
       "一站式方便地交互、管理、分析所有部署的合约",
     link: "/dashboard",

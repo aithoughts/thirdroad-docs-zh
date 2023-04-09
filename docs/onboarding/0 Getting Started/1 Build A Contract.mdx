@@ -7,13 +7,15 @@ import QuickstartCard from "@components/QuickstartCard";
 import TwitterCard from "@components/ShareOnTwitterCard";
 import BeginContractJourney from "@components/getting-started/BeginContractJourney";
 
-You may want to build a smart contract from the ground up,
-or deploy a prebuilt solution that meets your needs;
-we provide solutions for creating and deploying _any_ smart contract.
+# 部署一份智能合约
 
-### Begin Your Journey
+你可能想从头开始构建一份智能合约，
+或者部署一个预先构建的解决方案来满足你的需求;
+我们为创建和部署任何智能合约提供解决方案。
 
-Select which card best describes your contract needs below.
+### 开始你的旅程
+
+从下方选择最能描述你合约需求的卡片。
 
 <BeginContractJourney />
 
@@ -21,35 +23,32 @@ Select which card best describes your contract needs below.
 
 <div id="custom-contract-section">
 
-<h3>Creating A Project</h3>
+<h3>创建项目</h3>
 
-We can use the [CLI](/cli) to create a new project with a smart contract inside,
-and [Solidity SDK]](/solidity) installed for us.
+我们可以使用[CLI](/cli)创建一个包含智能合约的新项目，并为我们安装[Solidity SDK](/solidity)。
 
 ```bash
 npx thirdweb create contract
 ```
 
-This will kick off an interactive series of questions to help you get started:
+这将开启一系列互动问题，帮助你开启项目:
 
-- Give your project a name
-- Select [`Hardhat`](https://hardhat.org/) as the framework
-- Select `ERC721` as the [base contract](/solidity/base-contracts/erc721base)
-- Select `None` for optional [extensions](/solidity/extensions)
+- 给你的项目起个名字
+- 选择[`Hardhat`](https://hardhat.org/)作为框架
+- 选择“ERC721”作为[base contract](/solidity/base-contracts/erc721base)
+- 可选[extensions](/solidity/extensions)选择“None”
 
-<h3 style={{ marginTop: 48 }}>Exploring The Project</h3>
+<h3 style={{ marginTop: 48 }}>项目探索</h3>
 
-The `create` command generates a new directory with your project name.
-Open this directory in your text editor.
+“create”命令用你的项目名生成一个新目录。在文本编辑器中打开此目录。
 
-Inside the `contracts` folder, you'll find a `Contract.sol` file; this is our smart contract written in Solidity!
+在“contracts”文件夹中，你会发现一个“Contract.sol”文件；这是我们用Solidity写的智能合约!
 
-If we take a look at the code, you can see that our contract is inheriting the functionality of [ERC721Base](/solidity/base-contracts/erc721base),
-by:
+如果我们看一下代码，你可以看到我们的合约通过以下方式继承了[ERC721Base](/solidity/base-contracts/erc721base)的功能:
 
-1. [Importing](https://solidity-by-example.org/import/) the contract
-2. [Inheriting](https://docs.soliditylang.org/en/v0.8.17/contracts.html#inheritance) the contract; by declaring that our contract `is ERC721Base`
-3. Implementing any [required methods](/solidity/base-contracts/erc721base#implementing-the-contract) such as the [`constructor`](https://docs.soliditylang.org/en/v0.8.17/contracts.html#constructors).
+1. [导入](https://solidity-by-example.org/import/)合约
+2. [继承](https://docs.soliditylang.org/en/v0.8.17/contracts.html#inheritance)合约；声明我们的合同是‘ERC721Base’
+3. 实现任何[必需的方法](/solidity/base-contracts/erc721base#implementing-the-contract)，如“构造函数”[`constructor`](https://docs.soliditylang.org/en/v0.8.17/contracts.html#constructors)。
 
 ```solidity title="contracts/Contract.sol"
 // SPDX-License-Identifier: MIT
@@ -67,26 +66,23 @@ contract Contract is ERC721Base {
 }
 ```
 
-This inheritance pattern lets us use functionality from other contracts inside of ours, modify it, and add custom logic.
+这种继承模式允许我们在我们的合约中使用来自其他合约的功能，修改它，并添加自定义逻辑。
 
-For example, our contract currently implements all of the logic inside
-the [ERC721Base.sol](https://github.com/thirdweb-dev/contracts/blob/main/contracts/base/ERC721Base.sol) contract; which
-implements the [ERC721A](https://github.com/thirdweb-dev/contracts/blob/main/contracts/eip/ERC721A.sol) standard with several useful [extensions](/solidity/extensions).
+例如，我们的合约目前实现了[ERC721Base.sol](https://github.com/thirdweb-dev/contracts/blob/main/contracts/base/ERC721Base.sol)合约中的所有逻辑；它通过几个有用的扩展实现了[ERC721A](https://github.com/thirdweb-dev/contracts/blob/main/contracts/eip/ERC721A.sol)标准。
 
-<h3 style={{ marginTop: 48 }}>Adding Extensions</h3>
+<h3 style={{ marginTop: 48 }}>添加扩展</h3>
 
-[Extensions](/solidity/extensions) are a great way to add individual pieces of
-functionality to your contract, such as [Permissions](/solidity/extensions/permissions).
+[扩展](/solidity/extensions)是向合约中添加个别功能的好方法，比如[权限](/solidity/extensions/permissions)。
 
-You can follow the same pattern as we did with the base contract to add an extension:
+你可以遵循与我们对基础合约所做的相同的模式来添加扩展:
 
-**Import**
+**引入**
 
 ```solidity
 import "@thirdweb-dev/contracts/extension/PermissionsEnumerable.sol";
 ```
 
-**Inherit**
+**继承**
 
 ```solidity
 contract Contract is ERC721Base, PermissionsEnumerable {
@@ -94,7 +90,7 @@ contract Contract is ERC721Base, PermissionsEnumerable {
 }
 ```
 
-**Implement**
+**实现**
 
 ```solidity
 contract Contract is ERC721Base, PermissionsEnumerable {
@@ -115,44 +111,41 @@ contract Contract is ERC721Base, PermissionsEnumerable {
 }
 ```
 
-That's it! 🥳 You just made an ERC721A NFT collection smart contract with permission controls!
+大功告成！🥳 您刚刚创建了一个ERC721A NFT集合智能合约，具有权限控制！
 
-<h2 style={{ marginTop: 64 }}>Deploying</h2>
+<h2 style={{ marginTop: 64 }}>部署</h2>
 
-Let's [deploy](/deploy) our contract to the blockchain, by running the following command:
+让我们通过运行以下命令将合约[部署](/deploy)到区块链:
 
 ```bash
 yarn deploy
 ```
 
-That's it! 🥳 This command does the following:
+就是这样！🥳 该命令的作用如下：
 
-- Compiles your contract
-- Uploads your contract source code ([ABI](https://docs.soliditylang.org/en/v0.8.17/abi-spec.html)) to
-  [IPFS](https://docs.ipfs.tech/concepts/what-is-ipfs/)
-- Opens the [dashboard](/dashboard) for you to select one of our
-  [supported networks](https://blog.thirdweb.com/guides/which-network-should-you-use/) to deploy to
+- 编译你的合约
+- 上传您的合约源代码([ABI](https://docs.soliditylang.org/en/v0.8.17/abi-spec.html))到[IPFS](https://docs.ipfs.tech/concepts/what-is-ipfs/)
+- 打开[仪表板](/dashboard)，让您选择要部署到的[支持网络](https://blog.thirdweb.com/guides/which-network-should-you-use/)之一
 
 ![thirdweb CLI - thirdweb deploy](./assets/2.png)
 
-First, we need to enter the values for our contract's constructor:
+首先，我们需要输入合约构造函数的值：
 
-- `_name`: The name of our contract
-- `_symbol`: The symbol or "ticker" given to our contracts tokens
-- `_royaltyRecipient`: The wallet address that will receive the royalties from secondary sales
-- `_royaltyBps`: The **basis points** (_bps_) that will be given to the royalty recipient for each secondary sale, e.g. 500 = 5%
+- `_name`: 我们合约的名称
+- `_symbol`: 给我们的合约代币的符号或“ticker”
+- `_royaltyRecipient`: 将从二次销售中接收版税的钱包地址
+- `_royaltyBps`: 每次二次销售将给予特许权使用费接受者的**basis points** (_bps_)，例如500 = 5%
 
-Finally, select the [network](https://blog.thirdweb.com/guides/which-network-should-you-use/)
-you want to deploy to _(we recommend the Goerli test network)_, and click "Deploy Now".
+最后，选择要部署到_(我们推荐Goerli测试网络)_的[网络](https://blog.thirdweb.com/guides/which-network-should-you-use/)，然后单击“Deploy Now”。
 
 ![Deploying your contract using the thirdweb dashboard](./assets/3.png)
 
-Once your contract is deployed, you'll be redirected to your contract's dashboard:
+一旦你的合约被部署，你会被重定向到合约的仪表板:
 
 <div className="row" style={{ marginBottom: 16 }}>
   <div className="col col--12" style={{ padding: 8, paddingBottom: 0 }}>
     <QuickstartCard
-      name="Next Up: Welcome to Your Contract Dashboard"
+      name="接下来：欢迎来到你的合约仪表板"
       link="/getting-started/dashboard"
       image="/assets/product/dashboard.png"
     />
@@ -165,38 +158,30 @@ Once your contract is deployed, you'll be redirected to your contract's dashboar
 
 <div id="prebuilt-contract-section">
 
-<h3>Explore Contracts</h3>
+<h3>探索合约</h3>
 
-From the [explore page](https://thirdweb.com/explore), you can choose from
-a curated collection of gas-optimized, audited, and
-battle-tested smart contracts built by trusted open-source protocols and the thirdweb team;
-ready to deploy in one click.
+在[探索页面](https://thirdweb.com/explore)，您可以选择由可信的开源协议和thirdweb团队构建的经过精心策划的gas优化、审计和战斗测试的智能合约;一键部署即可。
 
-For example, let's select the [NFT Collection](https://thirdweb.com/thirdweb.eth/TokenERC721)
-smart contract built by the thirdweb team:
+例如，让我们选择由thirdweb团队构建的 [NFT Collection](https://thirdweb.com/thirdweb.eth/TokenERC721) 智能合约:
 
 ![discover smart contracts on explore page](./assets/18.png)
 
-From this page, we can discover the contract's features,
-view its source code, see which [extensions](https://portal.thirdweb.com/solidity/extensions) it implements,
-and deploy it to the [blockchain of our choice](https://blog.thirdweb.com/guides/which-network-should-you-use/).
+从这个页面，我们可以发现合约的特性，查看它的源代码，看看它实现了哪些[扩展](https://portal.thirdweb.com/solidity/extensions)，并将它部署到[我们选择的区块链](https://blog.thirdweb.com/guides/which-network-should-you-use/)。
 
-Click the "Deploy Now" button to enter the deployment flow, and
-enter the metadata of your smart contract; such as its name, symbol, image and description:
+点击“Deploy Now”按钮进入部署流程，输入您的智能合约元数据；如其名称、符号、图像和描述：
 
 ![enter contract-metadata](./assets/enter-contract-metadata.png)
 
-Finally, select the [network](https://blog.thirdweb.com/guides/which-network-should-you-use/) you want to deploy your
-smart contract to and click "Deploy Now":
+最后，选择你想要部署智能合约的[网络](https://blog.thirdweb.com/guides/which-network-should-you-use/)，然后点击“Deploy Now”:
 
 ![deploy smart contract](./assets/deploy-button-prebuilt.png)
 
-Once your contract is deployed, you'll be redirected to your contract's dashboard:
+一旦你的合约被部署，你会被重定向到合约的仪表板:
 
 <div className="row" style={{ marginBottom: 16 }}>
   <div className="col col--12" style={{ padding: 8, paddingBottom: 0 }}>
     <QuickstartCard
-      name="Next Up: Welcome to Your Contract Dashboard"
+      name="接下来：欢迎来到你的合约仪表板"
       link="/getting-started/dashboard"
       image="/assets/product/dashboard.png"
     />
@@ -208,40 +193,36 @@ Once your contract is deployed, you'll be redirected to your contract's dashboar
 
 <div id="deploy-contract-section">
 
-<h3>Deploy Your Smart Contract</h3>
+<h3>部署智能合约</h3>
 
-Use the [CLI](/cli) to [deploy](/deploy) your smart contract to the blockchain.
+使用[CLI](/cli)将智能合约[部署](/deploy)到区块链。
 
-From the same directory as your `.sol` smart contract file, run the following command:
+在与智能合约`.sol`文件相同的目录中，运行以下命令:
 
 ```bash
 npx thirdweb deploy
 ```
 
-That's it! 🥳 This command does the following:
+就是这样！🥳 该命令的作用如下：
 
-- Compiles your contract
-- Uploads your contract source code ([ABI](https://docs.soliditylang.org/en/v0.8.17/abi-spec.html)) to
-  [IPFS](https://docs.ipfs.tech/concepts/what-is-ipfs/)
-- Opens the [dashboard](/dashboard) for you to select one of our
-  [supported networks](https://blog.thirdweb.com/guides/which-network-should-you-use/) to deploy to
+- 编译你的合约
+- 上传您的合约源代码([ABI](https://docs.soliditylang.org/en/v0.8.17/abi-spec.html))到[IPFS](https://docs.ipfs.tech/concepts/what-is-ipfs/)
+- 打开[仪表板](/dashboard)，让您选择要部署到的[支持网络](https://blog.thirdweb.com/guides/which-network-should-you-use/)之一
 
 ![thirdweb CLI - thirdweb deploy](./assets/2.png)
 
-Open the generated URL in your browser, and populate the fields of
-your smart contract's [`constructor`](https://docs.soliditylang.org/en/v0.8.17/contracts.html#constructors).
+在浏览器中打开生成的URL，填充智能合约的“构造函数”[`constructor`](https://docs.soliditylang.org/en/v0.8.17/contracts.html#constructors)字段
 
-Finally, select the [network](https://blog.thirdweb.com/guides/which-network-should-you-use/)
-you want to deploy to _(we recommend the Goerli test network)_, and click "Deploy Now".
+最后，选择要部署到_(我们推荐Goerli测试网络)_的[网络](https://blog.thirdweb.com/guides/which-network-should-you-use/)，然后单击“Deploy Now”。
 
 ![Deploying your contract using the thirdweb dashboard](./assets/3.png)
 
-Once your contract is deployed, you'll be redirected to your contract's dashboard:
+一旦你的合约被部署，你会被重定向到合约的仪表板:
 
 <div className="row" style={{ marginBottom: 16 }}>
   <div className="col col--12" style={{ padding: 8, paddingBottom: 0 }}>
     <QuickstartCard
-      name="Next Up: Welcome to Your Contract Dashboard"
+      name="接下来：欢迎来到你的合同仪表板"
       link="/getting-started/dashboard"
       image="/assets/product/dashboard.png"
     />
