@@ -1,0 +1,78 @@
+html[data-theme="dark"] .DocSearch {
+  --docsearch-text-color: inherit;
+  --docsearch-muted-color: var(--ifm-color-secondary-darkest);
+  --docsearch-container-background: rgba(0, 0, 0, 0.7);
+  /* Modal */
+  --docsearch-modal-background: #151515;
+  /* Search box */
+  --docsearch-searchbox-background: transparent;
+  --docsearch-searchbox-focus-background: var(--ifm-color-black);
+  /* Hit */
+  --docsearch-hit-color: var(--ifm-font-color-base);
+  --docsearch-hit-active-color: var(--ifm-color-white);
+  --docsearch-hit-background: var(--ifm-color-emphasis-100);
+  /* Footer */
+  --docsearch-footer-background: transparent;
+
+  --docsearch-key-gradient: #1d1d1d;
+  --docsearch-key-shadow: none;
+  --docsearch-highlight-color: none;
+
+  --docsearch-modal-shadow: none;
+  --docsearch-searchbox-shadow: none;
+  --docsearch-footer-shadow: none;
+  --docsearch-searchbox-focus-background: none;
+}
+
+.navbar__items--right {
+  padding-top: 24px;
+  padding-bottom: 24px;
+}
+
+.navbar__items--right > :last-child {
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center !important;
+}
+
+@media (min-width: 996px) {
+  .navbar__items--right {
+    position: fixed;
+    right: 0em;
+    top: 0em;
+    // fill width of the screen
+    width: calc(100% - 300px);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding-left: 32px;
+    padding-right: 24px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    border-left: 1px solid rgba(255, 255, 255, 0.1);
+    background-color: var(--ifm-background-color) !important;
+  }
+}
+
+@media (max-width: 997px) {
+  .navbar {
+    height: auto;
+  }
+
+  .navbar__items--right {
+    border: none !important;
+  }
+
+  .navbar__items--right:first-child {
+    display: none;
+  }
+
+  .goToAppButton_src-theme-Navbar-Content-styles-module {
+    display: none !important;
+  }
+}
+
+html[data-theme="light"] .navbar__items--right {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  border-left: 1px solid rgba(0, 0, 0, 0.1);
+}

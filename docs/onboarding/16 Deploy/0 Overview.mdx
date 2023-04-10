@@ -1,0 +1,68 @@
+---
+slug: /deploy
+title: Overview
+hide_title: true
+---
+
+# 部署 Deploy
+
+使用一个命令轻松部署**任何**合约到**任何EVM**兼容链:
+
+```bash
+npx thirdweb deploy
+```
+
+不需要设置，硬编码的私钥，RPC URLs或脚本
+
+## 为什么使用 Deploy？
+
+使用Deploy的好处:
+
+- **无需设置**或安装
+- **增加安全性**:
+- 不需要导出私钥。部署是在浏览器的[仪表板](/dashboard)UI中使用浏览器钱包完成的。
+- 支持[安全](https://safe.global/wallet)，所以不需要在你的团队共享私钥。
+- 不需要设置RPC URL -我们为你处理所有的复杂性!
+- 通过用户界面部署。这允许你在部署时设置构造函数参数。
+- 自动上传并固定合约元数据到IPFS。
+- 在[Sourcify](https://sourcify.dev/)上自动验证你的合约。
+- 自动添加你的合约到仪表板 -这一步是[gasless](/glossary/gasless-transactions)的！这意味着你可以轻松地管理合约并与之交互。
+- 在将智能合约集成到web3应用程序时，不需要复制你的合约ABI。
+
+## Deploy 是如何工作的?
+
+通过使用Deploy，你的合约元数据将自动上传到IPFS并进行验证，使你的合约在任何web3应用程序中可用，而无需复制你的合约ABI。
+
+这是通过:
+1. 使用solc (solidity编译器)的默认行为 -将已编码的合约元数据附加到合约字节码中。
+2. 将合约元数据上传到IPFS
+
+### 合约元数据的编码(Encoding)和提取(Extracting)
+
+默认情况下，当编译任何solidity合约时，solc编译器:
+
+1. 计算合约元数据JSON工件的IPFS哈希(包含合约名称、ABI、源代码、注释和编译器设置等信息)。
+2. 使用CBOR编码对计算的IPFS哈希进行编码
+3. 将已编码的字节追加到已编译字节码的末尾
+
+这意味着从任何部署的合约中，你可以:
+
+1. 使用标准RPC调用`eth_getCode`获取合约字节码。
+2. 使用CBOR解码器解码字节码末尾的数据。
+3. 从解码的数据中提取IPFS散列。
+4. 下载包含源代码、ABI等的原始合约元数据。
+
+由于**IPFS哈希是不可变的**，因此保证了编码后的合约元数据是正确且未被修改的。
+这意味着所有的合约都是自动验证的，不需要任何第三方！然而，**编译器只计算IPFS哈希并对其进行编码，它不会上传任何内容到IPFS**!
+
+### 上传合约元数据到IPFS
+
+通过使用Deploy:
+
+1. 你的合约元数据会**自动上传到IPFS**，这意味着我们可以使用solc的默认行为来解锁我们的[SDKs](/sdk)。
+2. 你的合约会在[Sourcify](https://sourcify.dev/)上**自动验证**。
+
+这使得使用我们的[SDKs](/sdk)构建web3应用程序变得很容易，而不必复制或更新合约ABI。相反，ABI是从上传到IPFS的合约元数据中检索的！
+这作为一个**真理的来源**，因此总是最新的。
+
+有关如何使用Deploy自动验证合约的更多信息，请访问["Self-verifiable contracts using solc and IPFS (使用solc和IPFS的自验证合约)"](https://mirror.xyz/joenrv.eth/DdbK6GR-CkeYxHoU8sKl0AFYbGeQwZcvCM5Qvzipr0g)博客文章。

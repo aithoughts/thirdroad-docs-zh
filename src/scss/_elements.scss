@@ -1,0 +1,73 @@
+.supported-language-section {
+  a {
+    color: inherit;
+    text-decoration: none;
+    max-height: 64px;
+  }
+  .card__body {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 12px;
+  }
+  &__icon {
+    width: 32px;
+    border-radius: 0 !important;
+  }
+
+  p {
+    font-weight: 600;
+  }
+}
+
+html[data-theme="dark"] .supported-language-section {
+  &__icon {
+    &__Solidity {
+      filter: invert(1);
+    }
+  }
+}
+
+
+
+html[data-theme="dark"] .viewContractCodeBtn {
+  color: #fff !important;
+
+  &__icon {
+    filter: brightness(0) invert(1) !important;
+  }
+
+  &__divider {
+    background-color: rgba(255, 255, 255, 0.25) !important;
+  }
+}
+
+html[data-theme="light"] .feedback-button {
+  color: #000 !important;
+  border-color: rgba(0, 0, 0, 0.2) !important;
+}
+
+html[data-theme="light"] .feedback-form-input {
+  color: #000 !important;
+  border-color: rgba(0, 0, 0, 0.1) !important;
+}
+
+html[data-theme="dark"] .viewCodeBtn {
+  color: #fff !important;
+
+  &__icon {
+    filter: brightness(0) invert(1) !important;
+  }
+
+  &__divider {
+    background-color: rgba(255, 255, 255, 0.25) !important;
+  }
+}
+
+html[data-theme="light"] .quiz-container {
+  border-color: rgba(0, 0, 0, 0.1) !important;
+}
+
+html[data-theme="dark"] .deployContractBtn > img {
+  // filter: brightness(0) !important;
+}

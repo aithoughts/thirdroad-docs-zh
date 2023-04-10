@@ -1,0 +1,39 @@
+---
+slug: /deploy/getting-started
+title: Getting Started
+---
+
+import CLI from "/docs/cli.json";
+import CLIOptions from "@components/CLIOptions";
+
+# 部署
+
+使用[CLI](/cli)通过[仪表板](/dashboard)将合约直接部署到**任何EVM兼容链**。
+
+```bash
+npx thirdweb deploy
+```
+
+## 用法
+
+执行以下命令后，将会:
+
+- 检测框架(Hardhat, Foundry或Truffle)。
+- 使用项目设置在当前目录下**编译**所有合同。
+- 允许你选择想要部署的合约。
+- 上传你的合约元数据到IPFS，确保它与编译字节码中编码的IPFS哈希完全匹配。
+- 检测合同上的[扩展](/solidity/extensions)
+- 在[仪表板](https://thirdweb.com/dashboard)中打开部署流程，以便连接钱包，输入合约参数并选择要部署的链，而不需要硬编码私钥！
+
+```bash
+npx thirdweb [options]
+```
+
+## 可选参数
+
+<div>
+  {CLI.deploy.map(({ flags, description }) => (
+    <CLIOptions flags={flags} description={description} />
+  ))}
+</div>
+

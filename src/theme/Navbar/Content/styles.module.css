@@ -1,0 +1,99 @@
+/*
+Hide color mode toggle in small viewports
+ */
+@media (max-width: 997px) {
+  .colorModeToggle {
+    display: none;
+  }
+
+  .breadcrumbs {
+    display: none !important;
+  }
+
+  .goToAppButton {
+    display: none !important;
+  }
+
+  .normalLinks {
+    display: none !important;
+  }
+}
+
+.goToAppButton {
+  cursor: pointer;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 12px;
+  padding-left: 16px;
+  padding-right: 16px;
+  height: 32px;
+  background-color: var(--thirdweb-primary-color);
+  border-radius: 4px;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 100%;
+  text-decoration: none;
+  color: #fff;
+  margin-left: 30px;
+}
+
+.normalLinks {
+  cursor: pointer;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 12px;
+  /* padding-left: 16px;
+  padding-right: 16px; */
+  height: 32px;
+  /* background-color: var(--thirdweb-primary-color); */
+  border-radius: 4px;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 100%;
+  text-decoration: none;
+  color: #fff;
+  margin-left: 20px;
+}
+
+html[data-theme="light"] .normalLinks {
+  color: #000 !important;
+}
+
+.normalLinks:hover {
+  color: #fff !important;
+  opacity: 0.9;
+  transition: all 0.2s ease-in-out;
+}
+
+.rightSideContainer {
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center !important;
+}
+
+html[data-theme="light"] .goToAppButton {
+  text-decoration: none;
+  color: #fff !important;
+}
+
+html[data-theme="light"] .goToAppButton:hover {
+  color: #fff !important;
+  opacity: 0.9;
+  transition: all 0.2s ease-in-out;
+}
+
+html[data-theme="dark"] .goToAppButton {
+  /* background: linear-gradient(83.27deg, #c29afe 17.16%, #fe9aee 99.87%); */
+  /* color: #000; */
+  text-decoration: none;
+}
+
+html[data-theme="dark"] .goToAppButton:hover {
+  color: #fff !important;
+  opacity: 0.9;
+  transition: all 0.2s ease-in-out;
+}

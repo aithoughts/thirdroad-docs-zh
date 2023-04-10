@@ -1,0 +1,227 @@
+@media (min-width: 996px) {
+  .menu {
+    height: calc(100% - 110px);
+    flex-grow: 0;
+  }
+}
+
+.olvy-unread-indicator.olvy-organisation-codesandbox.top-right {
+  right: auto;
+  left: 114px;
+  background: var(--ifm-link-hover-color);
+  box-shadow: 0 0 0 var(--ifm-link-hover-color);
+  color: var(--ifm-background-color);
+  animation: olvyPulse 2s infinite;
+}
+
+@keyframes olvyPulse {
+  0% {
+    -moz-box-shadow: 0 0 0 0 var(--ifm-link-hover-color);
+    box-shadow: 0 0 0 0 var(--ifm-link-hover-color);
+  }
+  70% {
+    -moz-box-shadow: 0 0 0 6px #0000;
+    box-shadow: 0 0 0 6px #0000;
+  }
+  100% {
+    -moz-box-shadow: 0 0 0 0 #0000;
+    box-shadow: 0 0 0 0 #0000;
+  }
+}
+
+.bottom-link svg {
+  display: none;
+}
+
+@media (min-width: 996px) {
+  .bottom-link {
+    background: var(--thirdweb-background-color);
+    width: var(--doc-sidebar-width);
+    width: 100%;
+  }
+
+  .bottom-link .menu__link {
+    font-size: 14px !important;
+  }
+}
+
+.menu__link {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: 38px;
+}
+
+.menu__caret {
+  display: none;
+}
+
+// This is a really hacky animation cuz idk how to do it properly
+.menu__link--sublist::before {
+  content: var(--ifm-menu-link-sublist-icon);
+  width: 8px;
+  height: 4px;
+  padding-bottom: 22px;
+  padding-right: 8px;
+  padding-left: 4px;
+  transition: 0.2s ease-in-out;
+  margin-left: -20px;
+}
+
+.menu__list-item--collapsed
+  > .menu__list-item-collapsible
+  > .menu__link--sublist::before {
+  transform: rotate(-90deg);
+  padding-bottom: 30px;
+  padding-right: 8px;
+  padding-left: 4px;
+  margin-left: -20px;
+  // animation
+  transition: 0.2s ease-in-out;
+}
+
+.menu__list {
+  padding-left: 11px !important;
+}
+
+// But not the first menu__list
+.menu__list:first-child {
+  padding-left: 0 !important;
+}
+
+.menu__list-item {
+  padding-left: 0px;
+  font-size: 16px;
+  line-height: 22.4px;
+  font-weight: 500;
+  font-style: normal;
+  line-height: 140%;
+  color: var(--thirdweb-text-color);
+
+  .menu__list-item-collapsible {
+    button {
+      &:before {
+        background: var(--ifm-menu-link-sublist-icon) 50% / 1.2rem 1.2rem;
+      }
+
+      &:hover {
+        background: transparent;
+      }
+    }
+  }
+
+  .menu__list-item {
+    font-size: 14px;
+    padding-left: 32px;
+    border-left: 2px solid var(--thirdweb-menu-border-color);
+    padding-left: 8px;
+    margin-top: 0;
+
+    .menu__list-item {
+      font-size: 13px;
+    }
+  }
+
+  .menu__link:after {
+    // dont show dropdown arrow on right
+    visibility: hidden;
+  }
+
+  > .menu__list-item {
+    margin-left: 0em;
+  }
+}
+
+.menu__list-item--collapsed {
+  // first child
+  &:first-child {
+    &:first-child {
+      margin-top: 0;
+      // get the before of the first child and rotate it 90 deg
+      &:before {
+        transform: rotate(180deg);
+      }
+    }
+  }
+}
+
+.iconExternalLink__-_-node_modules-\@docusaurus-theme-classic-lib-next-theme-IconExternalLink-styles-module {
+  display: none;
+}
+
+.menu__link--active:not(.menu__link--sublist) {
+  background-color: var(thirdweb-menu-selected-background-color);
+}
+
+.tocCollapsibleContent__-_-node_modules-\@docusaurus-theme-classic-lib-next-theme-TOCCollapsible-styles-module
+  > ul {
+  border-top: none !important;
+}
+
+/* hide categories */
+
+.hidden-category {
+  display: none;
+}
+
+.sidebar-section-container {
+  margin-bottom: 1rem;
+  padding-bottom: 8px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.sidebar-section-title {
+  font-size: 16px;
+  line-height: 22.4px;
+  color: var(--thirdweb-text-color);
+  margin-bottom: 8px;
+  padding-bottom: 4px;
+  margin-left: 8px;
+  opacity: 0.95;
+  font-weight: 700;
+}
+
+html[data-theme="light"] {
+  .sidebar-section-container {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  }
+}
+
+// On non-mobile, sdks should be at bottom
+@media (min-width: 996px) {
+  .bottom-menu-group {
+    // Margin top with the remaining avialble space
+    margin-top: auto !important;
+    padding-bottom: 0px !important;
+  }
+}
+
+.sub-sidebar-category {
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 1rem;
+}
+
+.sub-sidebar-category > div {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding-left: calc(var(--ifm-menu-link-padding-horizontal) - 12px);
+  gap: 16px;
+}
+
+.sub-sidebar-category > div > img {
+  height: 32px;
+  width: 32px;
+}
+
+.sub-sidebar-category > div > p {
+  margin-bottom: 0px;
+  color: var(--thirdweb-heading-color);
+}
+
+.back-home-link {
+  font-size: 14px;
+  padding-left: calc(var(--ifm-menu-link-padding-horizontal) - 12px);
+  margin-bottom: 24px;
+}
