@@ -47,8 +47,8 @@ npx thirdweb create contract
 如果我们看一下代码，你可以看到我们的合约通过以下方式继承了[ERC721Base](/solidity/base-contracts/erc721base)的功能:
 
 1. [导入](https://solidity-by-example.org/import/)合约
-2. [继承](https://docs.soliditylang.org/en/v0.8.17/contracts.html#inheritance)合约；声明我们的合同是‘ERC721Base’
-3. 实现任何[必需的方法](/solidity/base-contracts/erc721base#implementing-the-contract)，如“构造函数”[`constructor`](https://docs.soliditylang.org/en/v0.8.17/contracts.html#constructors)。
+2. [继承](https://docs.soliditylang.org/en/v0.8.17/contracts.html#inheritance)合约；声明我们的合约是‘ERC721Base’
+3. 实现任何[必要方法](/solidity/base-contracts/erc721base#implementing-the-contract)，如“构造函数”[`constructor`](https://docs.soliditylang.org/en/v0.8.17/contracts.html#constructors)。
 
 ```solidity title="contracts/Contract.sol"
 // SPDX-License-Identifier: MIT
@@ -111,7 +111,7 @@ contract Contract is ERC721Base, PermissionsEnumerable {
 }
 ```
 
-大功告成！🥳 您刚刚创建了一个ERC721A NFT集合智能合约，具有权限控制！
+大功告成！🥳 你刚刚创建了一个ERC721A NFT集合智能合约，具有权限控制！
 
 <h2 style={{ marginTop: 64 }}>部署</h2>
 
@@ -124,8 +124,8 @@ yarn deploy
 就是这样！🥳 该命令的作用如下：
 
 - 编译你的合约
-- 上传您的合约源代码([ABI](https://docs.soliditylang.org/en/v0.8.17/abi-spec.html))到[IPFS](https://docs.ipfs.tech/concepts/what-is-ipfs/)
-- 打开[仪表板](/dashboard)，让您选择要部署到的[支持网络](https://blog.thirdweb.com/guides/which-network-should-you-use/)之一
+- 上传你的合约源代码([ABI](https://docs.soliditylang.org/en/v0.8.17/abi-spec.html))到[IPFS](https://docs.ipfs.tech/concepts/what-is-ipfs/)
+- 打开[仪表板](/dashboard)，让你选择要部署到的[支持网络](https://blog.thirdweb.com/guides/which-network-should-you-use/)之一
 
 ![thirdweb CLI - thirdweb deploy](./assets/2.png)
 
@@ -160,7 +160,7 @@ yarn deploy
 
 <h3>探索合约</h3>
 
-在[探索页面](https://thirdweb.com/explore)，您可以选择由可信的开源协议和thirdweb团队构建的经过精心策划的gas优化、审计和战斗测试的智能合约;一键部署即可。
+在[探索页面](https://thirdweb.com/explore)，你可以选择由可信的开源协议和thirdweb团队构建的经过精心策划的gas优化、审计和战斗测试的智能合约;一键部署即可。
 
 例如，让我们选择由thirdweb团队构建的 [NFT Collection](https://thirdweb.com/thirdweb.eth/TokenERC721) 智能合约:
 
@@ -168,7 +168,7 @@ yarn deploy
 
 从这个页面，我们可以发现合约的特性，查看它的源代码，看看它实现了哪些[扩展](https://portal.thirdweb.com/solidity/extensions)，并将它部署到[我们选择的区块链](https://blog.thirdweb.com/guides/which-network-should-you-use/)。
 
-点击“Deploy Now”按钮进入部署流程，输入您的智能合约元数据；如其名称、符号、图像和描述：
+点击“Deploy Now”按钮进入部署流程，输入你的智能合约元数据；如其名称、符号、图像和描述：
 
 ![enter contract-metadata](./assets/enter-contract-metadata.png)
 
@@ -206,8 +206,8 @@ npx thirdweb deploy
 就是这样！🥳 该命令的作用如下：
 
 - 编译你的合约
-- 上传您的合约源代码([ABI](https://docs.soliditylang.org/en/v0.8.17/abi-spec.html))到[IPFS](https://docs.ipfs.tech/concepts/what-is-ipfs/)
-- 打开[仪表板](/dashboard)，让您选择要部署到的[支持网络](https://blog.thirdweb.com/guides/which-network-should-you-use/)之一
+- 上传你的合约源代码([ABI](https://docs.soliditylang.org/en/v0.8.17/abi-spec.html))到[IPFS](https://docs.ipfs.tech/concepts/what-is-ipfs/)
+- 打开[仪表板](/dashboard)，让你选择要部署到的[支持网络](https://blog.thirdweb.com/guides/which-network-should-you-use/)之一
 
 ![thirdweb CLI - thirdweb deploy](./assets/2.png)
 
@@ -222,7 +222,7 @@ npx thirdweb deploy
 <div className="row" style={{ marginBottom: 16 }}>
   <div className="col col--12" style={{ padding: 8, paddingBottom: 0 }}>
     <QuickstartCard
-      name="接下来：欢迎来到你的合同仪表板"
+      name="接下来：欢迎来到你的合约仪表板"
       link="/getting-started/dashboard"
       image="/assets/product/dashboard.png"
     />

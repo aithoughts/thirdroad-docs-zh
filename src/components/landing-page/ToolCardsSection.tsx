@@ -42,14 +42,14 @@ const products: Product[] = [
     image: "/assets/product/deploy.png",
     name: "部署",
     description:
-      "通过为团队协作设计的简单部署工作流，在链上部署合同",
+      "通过为团队协作设计的简单部署工作流，在链上部署合约",
     link: "/deploy",
   },
   {
     image: "/assets/product/publish.png",
     name: "发布",
     description:
-      "发布你的合同，让我们70k+的web3开发者社区发现你的合同",
+      "发布你的合约，让我们70k+的web3开发者社区发现你的合约",
     link: "/publish",
   },
   {

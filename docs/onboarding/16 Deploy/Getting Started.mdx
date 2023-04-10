@@ -6,35 +6,34 @@ title: Getting Started
 import CLI from "/docs/cli.json";
 import CLIOptions from "@components/CLIOptions";
 
-# Deploy
+# 部署
 
-Use the [CLI](/cli) to deploy your contracts directly to **Any EVM compatible chain** using the [dashboard](/dashboard).
+使用[CLI](/cli)通过[仪表板](/dashboard)将合约直接部署到**任何EVM兼容链**。
 
 ```bash
 npx thirdweb deploy
 ```
 
-## Usage
+## 用法
 
-Running this command will:
+执行以下命令后，将会:
 
-- Detect the framework (Hardhat, Foundry or Truffle).
-- **Compile** all the contracts in the current directory using your project settings.
-- Allow you to select which contract(s) you want to deploy.
-- Upload your contract metadata to IPFS, making sure it matches exactly the encoded IPFS hash in the compiled bytecode.
-- Detect the [extensions](/solidity/extensions) on your contract.
-- Open the deploy flow in the [dashboard](https://thirdweb.com/dashboard) for you to connect a wallet, input the contract parameters
-and select a chain to deploy to, without needing to hardcode private keys!
+- 检测框架(Hardhat, Foundry或Truffle)。
+- 使用项目设置在当前目录下**编译**所有合同。
+- 允许你选择想要部署的合约。
+- 上传你的合约元数据到IPFS，确保它与编译字节码中编码的IPFS哈希完全匹配。
+- 检测合同上的[扩展](/solidity/extensions)
+- 在[仪表板](https://thirdweb.com/dashboard)中打开部署流程，以便连接钱包，输入合约参数并选择要部署的链，而不需要硬编码私钥！
 
 ```bash
 npx thirdweb [options]
 ```
 
-## Options
+## 可选参数
 
 <div>
   {CLI.deploy.map(({ flags, description }) => (
     <CLIOptions flags={flags} description={description} />
   ))}
 </div>
-```
+

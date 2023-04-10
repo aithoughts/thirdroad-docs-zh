@@ -1,4 +1,5 @@
 import React from "react";
+
 import ViewRepoButton from "./ViewRepoButton";
 
 type Props = {
@@ -15,16 +16,15 @@ export default function OpenSourceInfo({
   return (
     <div className="open-source-info-container">
       <h2>
-        Open Source
+        开源 Open Source
         {isLibrary && " Library"}
       </h2>
       <p>
-        The {repoName} {isLibrary && "library"} is open-source. You can view the
-        source code and contribute to it on{" "}
+        {repoName} {isLibrary && "library"} 是开源项目。 你可以在{" "}
         <a href={repoUrl} target="_blank" rel="noopener noreferrer">
           GitHub
         </a>
-        .
+        {" "}上查看源代码并对其进行贡献。
       </p>
 
       <ViewRepoButton name={repoName} text="View on GitHub" link={repoUrl} />

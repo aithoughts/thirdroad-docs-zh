@@ -11,8 +11,7 @@ import OpenSourceInfo from "@components/OpenSourceInfo";
 
 # CLI
 
-The CLI provides tools to create, build, and deploy projects using thirdweb tools and infrastructure. Using the CLI, you can
-create new projects with the SDK configured, build, publish and deploy smart contracts, generate types while developing, upload files to IPFS, and more.
+CLI提供了使用thirdweb工具和基础设施创建、构建和部署项目的工具。使用CLI，你可以使用已配置的SDK创建新项目，构建、发布和部署智能合约，在开发时生成类型，将文件上传到IPFS等等
 
 <OpenSourceInfo
   repoName="CLI"
@@ -20,11 +19,11 @@ create new projects with the SDK configured, build, publish and deploy smart con
   isLibrary={false}
 />
 
-## Installation
+## 安装
 
-Install the CLI package globally to use the commands anywhere on your system.
+全局安装CLI包，以便在系统的任何位置使用这些命令。
 
-_Note: If you do not wish to install it globally, you can prefix each command with `npx`. i.e. `npx thirdweb <command>`_.
+_注意：如果你不想全局安装它，你可以在每个命令前加上 `npx`。即 `npx thirdweb <command>`_。
 
 <Tabs>
   <TabItem value="npm" label="npm" default>
@@ -38,20 +37,20 @@ _Note: If you do not wish to install it globally, you can prefix each command wi
   </TabItem>
 </Tabs>
 
-Once installed, you can view the full list of available commands by running:
+安装完成后，你可以通过运行以下命令查看可用命令的完整列表：
 
 ```bash
 thirdweb
 ```
 
-## Available Commands
+## 可用命令
 
-| Name of command             | Description                                                                                    |
-| --------------------------- | ---------------------------------------------------------------------------------------------- |
-| [`create`](/cli/create)     | Create a web3 app from any of our official templates.                                          |
-| [`install`](/cli/install)   | Add thirdweb&rsquo;s packages to your existing project.                                        |
-| [`build`](/cli/build)       | Compile contract and detect thirdweb contract extensions.                                      |
-| [`generate`](/cli/generate) | Fetch contract ABIs and generate types for the SDK and improve performance.                    |
-| [`upload`](/cli/upload)     | Upload any file or directory to decentralized storage (IPFS).                                  |
-| [`deploy`](/deploy)         | Deploy your (or your team's) contracts securely to blockchains.                                |
-| [`publish`](/publish)       | Publish your protocol so other devs can deploy them and unlock SDKs, dashboards and analytics. |
+| 命令                        | 描述                                                                                           |
+| --------------------------- | ----------------------------------------------------------------------------------------------|
+| [`create`](/cli/create)     | 从我们的任何官方模板创建一个web3应用程序。 |
+| [`install`](/cli/install)   | 将thirdweb的包添加到现有项目中。 |
+| [`build`](/cli/build)       | 编译合约并检测thirdweb合约扩展。 |
+| [`generate`](/cli/generate) | 获取合约ABIs，为SDK生成类型，提高性能。 |
+| [`upload`](/cli/upload)     | 上传任何文件或目录到去中心化存储(IPFS)。 |
+| [`deploy`](/deploy)         | 将你(或你的团队)的合约安全地部署到区块链上。 |
+| [`publish`](/publish)       | 发布你的协议，这样其他开发者就可以部署它们，解锁SDKs、dashboard和analytics。 |

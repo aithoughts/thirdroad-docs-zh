@@ -13,7 +13,7 @@ const resources: Resource[] = [
   {
     name: "指南",
     description:
-      "了解更多，指导关于如何使用thirdweb来构建您的web3应用程序",
+      "了解更多，指导关于如何使用thirdweb来构建你的web3应用程序",
     link: "https://blog.thirdweb.com/guides/",
     image: "/assets/resources/guides.svg",
   },
